@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Lista de tareas</title>
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+<body>
+	<%include partials/header.ejs%>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-7">
+				<table class="table table-bordered table-hover">
+					<tr>
+						<th>No.</th>
+						<th>nombre</th>
+						<th>telefono</th>
+						<th>Opciones</th>
+					</tr>
+						<%for (var i=0;i<personas.length; i++){%>
+							<tr>
+								<td><%=i+1%></td>
+								<td><%=personas[i].nombre%></td>
+								<td><%=personas[i].tel%></td>
+								<td><a href="#" class="btn btn-info" name="editar" >Editar</a>
+								<a href="/delete/<%=personas[i]._id%>" class="btn btn-danger" name="eliminar">Eliminar</a></td>
+							</tr>
+						<%}%>
+				</table>
+			</div>
+			<div class="col-md-5">
+				<div class="card">
+					<div class="card-body">
+						<form action="/add" method="POST">
+							<div class="form-group">
+								<label for="">Nombre:</label>
+								<input type="text" name="nombre" class="form-control" placeholder="Ingrese nombre">
+							</div>
+							<div class="form-group">
+								<label for="">Tel:</label>
+								<input type="text" name="tel" class="form-control" placeholder="Ingrese telefono">
+							</div>
+							<div class="form-group">
+								<input type="submit" class="btn btn-success btn-block">
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
