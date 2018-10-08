@@ -20,7 +20,7 @@ app.set('views', path.join(__dirname,'views'))
 
 
 app.use(bodyParser.urlencoded({ extended: false }))
-app.use(routes)
+app.use('/',routes)
 
 
 //starting server
