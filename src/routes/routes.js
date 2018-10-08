@@ -10,7 +10,7 @@ routes.get('/',async(req,res)=>{
 	})
 })
 
-routes.post('/add',async(req,res)=>{
+routes.post('/add',async(req,res,next)=>{
 	const p=new person(req.body)
 	console.log(p)
 	await p.save()
