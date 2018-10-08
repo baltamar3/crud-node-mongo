@@ -10,13 +10,10 @@ routes.get('/',async(req,res)=>{
 	})
 })
 
-routes.post('/add',(req,res)=>{
+routes.post('/add',async(req,res)=>{
 	const p=new person(req.body)
 	console.log(p)
-	p.save(function (err) {
-  		if (err) return handleError(err);
-  		// saved!
-	})
+	await p.save()
 	res.redirect('/')
 })
 
