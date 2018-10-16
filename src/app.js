@@ -7,7 +7,7 @@ const app=express();
 
 
 //conected to data base
-mongoose.connect('mongodb://baltamar3:Eduardo1234@ds125073.mlab.com:25073/crud-database')
+mongoose.connect('mongodb://jennys:eduardo1234@ds125073.mlab.com:25073/crud-database')
 
 
 //import routes
