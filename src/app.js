@@ -28,3 +28,5 @@ app.use("/",routes)
 app.listen(app.get('port'), ()=>{
 	console.log(`server running in port : ${app.get('port')}`)
 })
+
+module.exports = app;
