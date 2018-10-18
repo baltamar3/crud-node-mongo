@@ -24,4 +24,19 @@ routes.get('/delete/:id', async(req,res)=>{
 	//res.send('resivido')
 })
 
+routes.get('/edit/:id',async(req,res)=>{
+	const {id}=req.params
+	const personaBuscada=await person.findById(id)
+	//console.log(personaBuscada)
+	res.render('edit',{
+		personaBuscada
+	})
+})
+
+routes.post('/update/:id',async(req,res)=>{
+	const {id}=req.params
+	const personaBuscada=await person.update({_id:id},req.body)
+	//console.log(personaBuscada)
+	res.redirect('/')
+})
 module.exports=routes

@@ -22,7 +22,7 @@
 								<td><%=i+1%></td>
 								<td><%=personas[i].nombre%></td>
 								<td><%=personas[i].tel%></td>
-								<td><a href="#" class="btn btn-info" name="editar" >Editar</a>
+								<td><a href="/edit/<%=personas[i]._id%>" class="btn btn-info" name="editar" >Editar</a>
 								<a href="/delete/<%=personas[i]._id%>" class="btn btn-danger" name="eliminar">Eliminar</a></td>
 							</tr>
 						<%}%>
@@ -34,7 +34,7 @@
 						<form action="/add" method="POST">
 							<div class="form-group">
 								<label for="">Nombre:</label>
-								<input type="text" name="nombre" class="form-control" placeholder="Ingrese nombre">
+								<input type="text" name="nombre" class="form-control" placeholder="Ingrese nombre" value="">
 							</div>
 							<div class="form-group">
 								<label for="">Tel:</label>
