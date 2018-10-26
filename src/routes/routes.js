@@ -19,6 +19,8 @@ routes.post('/add',async(req,res,next)=>{
 
 routes.get('/delete/:id', async(req,res)=>{
 	const {id}= req.params
+	console.log(id);
+	console.log(req.params);
 	await person.remove({_id: id})
 	res.redirect('/')
 	//res.send('resivido')

@@ -7,8 +7,13 @@ const app=express();
 
 
 //conected to data base
-mongoose.connect('mongodb://jennys:eduardo1234@ds125073.mlab.com:25073/crud-database')
-
+mongoose.connect('mongodb://jennys:eduardo1234@ds125073.mlab.com:25073/crud-database',{ useNewUrlParser: true })
+		.then(msj=>{
+			console.log("db conected");
+		})
+		.catch(error=>{
+			console.log("Error en Mongo: ",error);
+		})
 
 //import routes
 const routes=require('./routes/routes.js')
@@ -29,4 +34,3 @@ app.listen(app.get('port'), ()=>{
 	console.log(`server running in port : ${app.get('port')}`)
 })
 
-module.exports = app;
